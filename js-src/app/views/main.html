@@ -1,0 +1,20 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th width="100">Id</th>
+			<th width="500">名称</th>
+			<th>时间</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tr ng-repeat="product in products">
+		<td>{{product.id}}</td>
+		<td><a href="#/product/{{product.id}}">{{product.name}}</a></td>
+		<td>{{product.created_at}}</td>
+		<td>
+			<a href="#/product-edit/{{product.id}}"><i class="icon-edit"></i> 编辑</a>
+			<a href="#" ng-click="delete(product.id)"><i class="icon-remove"></i> 删除</a>
+		</td>
+    	
+    </tr>
+</table>
