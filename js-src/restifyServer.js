@@ -45,11 +45,11 @@ function mockHandler(fileName, accept, res) {
 
 app.get('/products/:id', product.findById);
 
-
 app.post('/products', product.addProduct);
-//app.post('/products', function(req, res) {
-    //console.log([req.body, req.params]);
-//});
+
+app.put('/products/:id', product.updateProduct);
+
+app.delete('/products/:id', product.deleteProduct);
 
 app.use(express.static(path.join(__dirname, 'app')));
 

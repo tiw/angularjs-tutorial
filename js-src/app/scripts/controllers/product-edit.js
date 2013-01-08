@@ -18,7 +18,7 @@ jsSrcApp.controller('Product-EditCtrl', ['$scope', '$location', '$routeParams', 
     $scope.save = function() {
         scope.hasError = false;
         var product = scope.product;
-        if (product.id) {
+        if (product._id) {
             //update it
             product.$update({id: $routeParams.id}, function(product) {
                 scope.title = 'Edit: ' + product.name;

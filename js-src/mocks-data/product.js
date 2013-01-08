@@ -65,6 +65,12 @@ exports.addProduct = function(req, res) {
     });
 }
 
-//exports.updateWine = function(req, res) {
-    //var id = req.params.id;
-//}
+exports.updateProduct = function(req, res) {
+    res.status(501);
+    res.end();
+}
+
+exports.deleteProduct = function(req, res) {
+    res.status(501);
+    res.end();
+}
