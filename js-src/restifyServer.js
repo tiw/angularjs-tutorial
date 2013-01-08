@@ -10,11 +10,12 @@ var testDir = __dirname + '/mocks-data';
 var app = express();
 app.use(express.bodyParser());
 
-app.get('/products', function(req, res) {
-    res.status('200');
-    res.setHeader('Content-Type', 'application/json');
-    res.end('[{"id": 1, "name": "iphone"}]');
-});
+app.get('/products', product.findAll);
+//app.get('/products', function(req, res) {
+    //res.status('200');
+    //res.setHeader('Content-Type', 'application/json');
+    //res.end('[{"id": 1, "name": "iphone"}]');
+//});
 
 function mockHandler(fileName, accept, res) {
     var fullPath = testDir + '/' + fileName;
@@ -42,12 +43,8 @@ function mockHandler(fileName, accept, res) {
     });
 }
 
-app.get('/products/:id', function(req, res) {
-    // try to find product.json.:id and return the content back.
-    var acceptHeader = req.get('accept');
-    var mockFile = 'product.get.' + req.params.id;
-    mockHandler(mockFile, acceptHeader, res);
-});
+app.get('/products/:id', product.findById);
+
 
 app.post('/products', product.addProduct);
 //app.post('/products', function(req, res) {

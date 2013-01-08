@@ -32,7 +32,21 @@ exports.findById = function(req, res) {
             });
         }
     });
-}
+};
+
+exports.findAll = function(req, res) {
+    db.collection('products', function(err, collection) {
+        if (err) {
+            res.status(500);
+            res.end;
+        } else {
+            collection.find().toArray(function(err, items) {
+                res.status(200); 
+                res.send(items);
+            });
+        }
+    });
+};
 
 exports.addProduct = function(req, res) {
     var product = req.body;
@@ -48,7 +62,6 @@ exports.addProduct = function(req, res) {
                 res.end();
             }
         });
-
     });
 }
 
