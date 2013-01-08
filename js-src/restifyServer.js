@@ -3,10 +3,12 @@ var http = require('http');
 var fs = require('fs');
 var path = require('path');
 var url = require('url');
+var product = require(__dirname + '/mocks-data/product.js');
 
 // test data base dir
 var testDir = __dirname + '/mocks-data';
 var app = express();
+app.use(express.bodyParser());
 
 app.get('/products', function(req, res) {
     res.status('200');
@@ -47,11 +49,10 @@ app.get('/products/:id', function(req, res) {
     mockHandler(mockFile, acceptHeader, res);
 });
 
-app.post('/products', function(req, res) {
-    res.set('Location', '/products/2');
-    res.status(201);
-    res.end();
-});
+app.post('/products', product.addProduct);
+//app.post('/products', function(req, res) {
+    //console.log([req.body, req.params]);
+//});
 
 app.use(express.static(path.join(__dirname, 'app')));
 
