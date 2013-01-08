@@ -1,6 +1,7 @@
 <h3>{{title}}</h3>
-<div class="error" ng-show="hasError">
-    oops! something wrong!
+<div class="alert" ng-show="hasError">
+    <button type="button" class="close" data-dismiss="alert" ng-click="ignoreError()">&times;</button>
+    <strong>oops!</strong> something wrong!
 </div>
 <form action="" class="form-horizontal">
 	<div class="control-group">
