@@ -52,7 +52,6 @@ exports.addProduct = function(req, res) {
     var product = req.body;
     db.collection('products', function(err, collection) {
         collection.insert(product, {safe: true}, function(err, result) {
-            console.log(product);
             if (err) {
                 res.status(500);
                 res.end();
@@ -66,11 +65,41 @@ exports.addProduct = function(req, res) {
 }
 
 exports.updateProduct = function(req, res) {
-    res.status(501);
-    res.end();
+    var id = req.params.id;
+    var product = req.body;
+    product._id = new BSON.ObjectID(product._id);
+    db.collection('products', function(err, collection) {
+        if (err) {
+            console.log(err);
+            res.status(500);
+            res.end();
+        } else {
+            //@todo: check if the content is there, if not return 204
+            collection.update({'_id': new BSON.ObjectID(id)}, product, {safe: true}, function(err, result) {
+                if (err) {
+                    console.log(err);
+                    res.status(500);
+                    res.end();
+                } else {
+                    res.status(200);
+                    res.send(product);
+                }
+            });
+        }
+    });
 }
 
 exports.deleteProduct = function(req, res) {
-    res.status(501);
-    res.end();
+    var id = req.params.id;
+    db.collection('products', function(err, collection) {
+        collection.remove({'_id': new BSON.ObjectID(id)}, {safe: true}, function(err, result) {
+            if (err) {
+                res.status(500);
+                res.end();
+            } else {
+                res.status(200);
+                res.end();
+            }
+        });
+    });
 }
