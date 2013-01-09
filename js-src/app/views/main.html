@@ -4,6 +4,7 @@
 			<th width="200">名称</th>
 			<th>价钱</th>
 			<th>操作</th>
+      <th></th>
 		</tr>
 	</thead>
 	<tr ng-repeat="product in products">
@@ -11,8 +12,10 @@
 		<td>{{product.price}}</td>
 		<td>
 			<a href="#/product-edit/{{product._id}}"><i class="icon-edit"></i> 编辑</a>
-			<a href="#" ng-click="delete(product._id)"><i class="icon-remove"></i> 删除</a>
 		</td>
+    <td>
+      <button-delete />
+    </td>
     	
     </tr>
 </table>
