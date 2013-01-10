@@ -19,7 +19,7 @@
     <body ng-app="jsSrcApp">
         <!-- Navbar
         ================================================== -->
-        <div class="navbar navbar-inverse navbar-fixed-top ec3s-nav">
+        <div class="navbar navbar-inverse navbar-fixed-top ec3s-nav" bs-navbar>
           <div class="navbar-inner">
             <div class="">
               <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -52,9 +52,9 @@
         <div class="container-fluid">
             <div class="ec3s-container row-fluid">
                 <div class="span3">
-                    <ul class="nav nav-tabs nav-stacked">
-                        <li><a href="#/product">Product</a></li>
-                        <li><a href="#/product-edit">Add</a></li>
+                    <ul class="nav nav-tabs nav-stacked" bs-navbar>
+                        <li data-match-route="/"><a href="#/product">Product</a></li>
+                        <li data-match-route="/product-edit"><a href="#/product-edit">Add</a></li>
                     </ul>
                 </div>
                 <div class="span9">
