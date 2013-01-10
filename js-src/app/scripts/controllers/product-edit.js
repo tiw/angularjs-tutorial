@@ -14,7 +14,7 @@ jsSrcApp.controller('Product-EditCtrl', ['$scope', '$location', '$routeParams', 
     var scope = $scope;
     $scope.ignoreError = function() {
         $scope.hasError = false;
-    }
+    };
     $scope.save = function() {
         scope.hasError = false;
         var product = scope.product;
@@ -29,7 +29,6 @@ jsSrcApp.controller('Product-EditCtrl', ['$scope', '$location', '$routeParams', 
             product.$save({id: $routeParams.id}, function(product, headers) {
                 scope.title = 'Edit: ' + product.name;
                 scope.product = product;
-                console.log(headers('Location'));
                 $location.path(headers('Location'));
             }, function(err) {
                 if (err.status == 500) {
