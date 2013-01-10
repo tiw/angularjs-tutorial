@@ -20,15 +20,19 @@ jsSrcApp.directive('fadey', function() {
         replace: true,
         template: '<a class="button-delete"><i style="margin-top: 4px;" class="icon-remove"></i></a>',
         link: function(scope, element, attrs) {
-        //debugger;
-          console.log(element);
+            var ename = attrs.ename;
             $(element).clickover({
                 global: true,
                 title: 'Are you sure?',
-                content: "<div id='my-poppy' class='btn-toolbar'><button id='button-confirm-delete-cancel' data-dismiss='clickover' class='btn'>Cancel</button><button id='button-confirm-delete-ok' class='btn btn-danger' ng-click='destroy(v)'>Delete</button></div>"
+                //auto_close: 5 * 1000,
+                html: true,
+                content: "<div id='my-poppy' class='btn-toolbar'>" +
+                         "<button data-dismiss='clickover' class='btn'>Cancel</button>" +
+                         "<button data-dismiss='clickover' class='btn btn-danger' ng-click='destroy(" + ename + ")'>Delete</button>" +
+                         "</div>"
             }).on('shown', function() {
-                $compile($("#my-poppy").contents())(scope);
+                $compile($('#my-poppy').contents())(scope);
             });
         }
-    }
+    };
 });

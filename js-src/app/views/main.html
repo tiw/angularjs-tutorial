@@ -1,10 +1,10 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th width="200">名称</th>
-			<th>价钱</th>
-			<th>操作</th>
-      <th></th>
+			<th width="10">名称</th>
+			<th width="50">价钱</th>
+			<th width="20">操作</th>
+      <th width="220"></th>
 		</tr>
 	</thead>
 	<tr ng-repeat="product in products">
@@ -14,7 +14,7 @@
 			<a href="#/product-edit/{{product._id}}"><i class="icon-edit"></i> 编辑</a>
 		</td>
     <td>
-      <button-delete />
+        <button-delete ename="product._id"/>
     </td>
     	
     </tr>
