@@ -1,21 +1,20 @@
 <table class="table table-striped">
-	<thead>
-		<tr>
-			<th width="10">名称</th>
-			<th width="50">价钱</th>
-			<th width="20">操作</th>
-      <th width="220"></th>
-		</tr>
-	</thead>
-	<tr ng-repeat="product in products">
-		<td><a href="#/products/{{product._id}}">{{product.name}}</a></td>
-		<td>{{product.price}}</td>
-		<td>
-			<a href="#/product-edit/{{product._id}}"><i class="icon-edit"></i> 编辑</a>
-		</td>
-    <td>
-        <span data-button-delete="product._id"/>
-    </td>
-    	
+    <thead>
+        <tr>
+            <th width="10">名称</th>
+            <th width="50">价钱</th>
+            <th width="20">操作</th>
+            <th width="220"></th>
+        </tr>
+    </thead>
+    <tr ng-repeat="product in products" ui-animate>
+        <td><a href="#/products/{{product._id}}">{{product.name}}</a></td>
+        <td>{{product.price}}</td>
+        <td>
+            <a href="#/product-edit/{{product._id}}"><i class="icon-edit"></i> 编辑</a>
+        </td>
+        <td>
+            <span data-button-delete="product._id"></span>
+        </td>
     </tr>
 </table>

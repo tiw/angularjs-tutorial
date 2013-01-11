@@ -1,6 +1,6 @@
 'use strict';
 
-var jsSrcApp = angular.module('jsSrcApp', ['ngResource', '$strap'])
+var jsSrcApp = angular.module('jsSrcApp', ['ngResource', '$strap', 'ui'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
