@@ -1,6 +1,10 @@
 'use strict';
 
-jsSrcApp.controller('Product-EditCtrl', ['$scope', '$location', '$routeParams', 'product', function($scope, $location, $routeParams, product) {
+jsSrcApp.controller(
+    'Product-EditCtrl',
+    ['$scope', '$location', '$routeParams', 'product', 'flash',
+    function($scope, $location, $routeParams, product, flash) {
+
     $scope.title = 'Add product';
     $scope.product = new product.Product;
     $scope.hasError = false;
@@ -12,6 +16,7 @@ jsSrcApp.controller('Product-EditCtrl', ['$scope', '$location', '$routeParams', 
         p.$save();
     }
     var scope = $scope;
+    var myFlashh = flash;
     $scope.ignoreError = function() {
         $scope.hasError = false;
     };
@@ -29,6 +34,7 @@ jsSrcApp.controller('Product-EditCtrl', ['$scope', '$location', '$routeParams', 
             product.$save({id: $routeParams.id}, function(product, headers) {
                 scope.title = 'Edit: ' + product.name;
                 scope.product = product;
+                flash.notify('the product ' + product.name + ' is successfuly saved');
                 $location.path(headers('Location'));
             }, function(err) {
                 if (err.status == 500) {

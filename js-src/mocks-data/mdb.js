@@ -49,6 +49,10 @@ exports.DbMapper = function (db, collectionName) {
     this.add = function (req, res) {
         var model = req.body;
         db.collection(collectionName, function (err, collection) {
+            if (err) {
+                res.status(500);
+                res.end();
+            }
             collection.insert(model, {safe:true}, function (err, result) {
                 if (err) {
                     res.status(500);
