@@ -43,11 +43,12 @@ var jsSrcApp = angular.module('jsSrcApp', ['ngResource', '$strap', 'ui'])
           transclude: false,
           link: function(scope, element, attr) {
               $rootScope.$on('event:notification', function(event, message) {
-                  console.log(element);
-                  alert(message);
-                  element.html(message);
+                  element.html('<strong>' + message + '</strong>');
                   element.show();
-                  console.log('get notification' + message);
+                  setTimeout(function() {
+                     element.html('');
+                     element.slideUp('slow');
+                  }, 3000);
               });
           }
       }
