@@ -91,7 +91,7 @@ exports.DbMapper = function (db, collectionName) {
         });
     };
 
-    this.delete = function (req, res) {
+    this.remove = function (req, res) {
         var id = req.params.id;
         db.collection(collectionName, function (err, collection) {
             collection.remove({'_id':new BSON.ObjectID(id)}, {safe:true}, function (err, result) {

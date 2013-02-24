@@ -1,4 +1,5 @@
-var express = require('express');
+var express;
+express = require('express');
 var http = require('http');
 var fs = require('fs');
 var path = require('path');

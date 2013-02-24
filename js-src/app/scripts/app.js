@@ -51,5 +51,5 @@ var jsSrcApp = angular.module('jsSrcApp', ['ngResource', '$strap', 'ui'])
                   }, 3000);
               });
           }
-      }
+      };
   });

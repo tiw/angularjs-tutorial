@@ -20,4 +20,4 @@ exports.findById = dbMapper.findById;
 exports.findAll = dbMapper.findAll;
 exports.addProduct = dbMapper.add;
 exports.updateProduct = dbMapper.update;
-exports.deleteProduct = dbMapper.delete;
+exports.deleteProduct = dbMapper.remove;

@@ -16,8 +16,8 @@ jsSrcApp.controller(
         p.$save();
     }
     var scope = $scope;
-    var myFlashh = flash;
-    $scope.ignoreError = function() {
+
+        $scope.ignoreError = function() {
         $scope.hasError = false;
     };
     $scope.save = function() {
