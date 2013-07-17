@@ -1,0 +1,31 @@
+<h3>{{title}}</h3>
+<div class="alert" ng-show="hasError">
+    <button type="button" class="close" data-dismiss="alert" ng-click="ignoreError()">&times;</button>
+    <strong>oops!</strong> something wrong!
+</div>
+<form action="" class="form-horizontal">
+	<div class="control-group">
+		<label class="control-label" for="name">名称</label>
+    	<div class="controls">
+    		<input type="text" name="name" value="" ng-model="product.name"/>
+    	</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="time">时间</label>
+		<div class="controls">
+	    	<input type="date" name="publishAt" value="" ng-model="product.publishAt"/>
+	    </div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="price">价格</label>
+		<div class="controls">
+	    	<input type="text" name="price" value="" ng-model="product.price"
+    ng-filter="number"/>
+	    </div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+	    	<input type="submit" value="保存" class="btn btn-primary" ng-click="save()" />
+	    </div>
+	</div>
+</form>

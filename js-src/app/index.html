@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title></title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="styles/bootstrap.css"/>
+        <link rel="stylesheet" href="styles/angular-ui.min.css"/>
+        <link rel="stylesheet" href="styles/main.css"/>
+        <script src="scripts/vendor/jquery-1.8.3.min.js"></script>
+        
+        <script type="text/javascript" charset="utf-8">
+        </script>
+    </head>
+    <body ng-app="jsSrcApp">
+        <!-- Navbar
+        ================================================== -->
+        <div class="navbar navbar-inverse navbar-fixed-top ec3s-nav" bs-navbar>
+          <div class="navbar-inner">
+            <div class="">
+              <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="brand" href="./index.html">EC3S CRM</a>
+              <div class="nav-collapse collapse">
+                <ul class="nav">
+                  <li class="">
+                    <a href="#/">Home</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+        
+        <!--[if lt IE 9]>
+            <script src="scripts/vendor/es5-shim.min.js"></script>
+            <script src="scripts/vendor/json3.min.js"></script>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="container-fluid">
+            <div class="ec3s-container row-fluid">
+                <div class="span3">
+                    <ul class="nav nav-tabs nav-stacked" bs-navbar>
+                        <li data-match-route="/"><a href="#/product">Product</a></li>
+                        <li data-match-route="/product-edit"><a href="#/product-edit">Add</a></li>
+                    </ul>
+                </div>
+                <div class="span9">
+                    <div notice class="alert" style="display:none">here show notice</div>
+                    <div ng-view></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="scripts/vendor/angular.js"></script>
+        <script src="scripts/vendor/angular-resource.js"></script>
+        <script src="scripts/vendor/rcl.js"></script>
+        <script src="scripts/vendor/bootstrap.min.js"></script>
+        <!--<script src="http://fiddle.jshell.net/js/lib/bootstrap-2.0.2.js"></script>-->
+        <script src="scripts/vendor/bootstrapx-clickover.js"></script>
+        <script src="scripts/vendor/angular-strap.min.js"></script>
+        <script src="scripts/vendor/angular-ui.min.js"></script>
+
+        <!-- build:js scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/directives/directives.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/product.js"></script>
+        <script src="scripts/services/product.js"></script>
+        <script src="scripts/controllers/product-edit.js"></script>
+        <!-- endbuild -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

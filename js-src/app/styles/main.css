@@ -1,0 +1,4 @@
+/* Will be compiled down to a single stylesheet with your sass files */
+body { font-family: microsoft yahei; }
+.ec3s-container{ padding-top: 60px; }
+.ec3s-nav .navbar-inner { padding: 0 20px; }
