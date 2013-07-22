@@ -35,7 +35,7 @@ input 绑定到了一起
 
 ```
 
-### valid field 验证表单element, 现实出错信息
+### valid field 验证表单element, 显示出错信息
 
  这里分两部分， 第一部分是angular自带的验证器， 另一部分是自己实现的验证器。
  这里只介绍第一种情况。 第二个会在单独的文章里描述。
@@ -49,6 +49,12 @@ input 绑定到了一起
     myForm.personEmail.$valid
  ```
  我们可以判定这个input的输入是否合法， 从而决定是否显示出错信息。
+
+ 具体是那类错误可以通过
+ ```js
+    myForm.personEmail.$error
+ ```
+ 用法如下：
  
 
 
