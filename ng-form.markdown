@@ -40,8 +40,10 @@ input 绑定到了一起
  这里分两部分， 第一部分是angular自带的验证器， 另一部分是自己实现的验证器。
  这里只介绍第一种情况。 第二个会在单独的文章里描述。
 
- angularjs 自带了一些html5的验证， 比如： 必填项、email、url （到1.0.7）其实只有这
- 三个 !!!^ ^
+ angularjs 自带了一些html5的验证， 比如： 必填项、email、url.
+
+ Angular实现了html5常用的input类型， 包括 (text, number, url, email, radio, checkbox)
+ 同时实现了下面的directive做验证(required, pattern, minlength, maxlength, min, max).
 
  用法一如既往的简单， 都是声明式的. 下面我们定义了一个input，名字叫做 personEmail，
  要求必须有输入，而且输入的必须是一个email. 通过变量
